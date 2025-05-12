@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport meta tag -->
+    <title>SGmcG World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: #eee;
+            padding: 30px 10px;
+        }
+        form {
+            margin: 20px auto;
+            display: inline-block;
+            text-align: left;
+            background: #222;
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            min-width: 280px;
+            max-width: 90%; /* Responsive max width */
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: 600;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 40px 10px 10px; /* right padding for icon space */
+            border: 2px solid #555;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #eee;
+            background: #333;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #61dafb;
+            background: #444;
+        }
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .toggle-password {
+            position: absolute;
+            top: 7%;
+            left: 220px;
+            width: 25%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #aaa;
+            padding: 0;
+            user-select: none;
+            outline: none;
+        }
+        .toggle-password:hover {
+            color: #61dafb;
+        }
+        h1 {
+            color: aqua;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-shadow: 0 0 5px aqua;
+        }
+        button {
+            display: block; /* Make the anchor a block element */
+            font-family: Arial, sans-serif;
+            background-color: #61dafb;
+            color: #121212;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #21a1f1;
+        }
+        @media (max-height: 600px) {
+            .container {
+                max-height: 560px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to SGmcG</h1>
+    <form>
+        <label for="account">Account</label>
+        <input type="text" id="account" name="account" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+            <button type="button" class="toggle-password" aria-label="Toggle password visibility" onclick="togglePassword()">👁️</button>
+        </div>
+
+        <div style="text-align: center;">
+    <button type="button" onclick="location.href='Percobaan/SGmcG.html';"
+        onmouseover="this.style.backgroundColor='#21a1f1';"
+        onmouseout="this.style.backgroundColor='#61dafb';"
+        aria-label="Verifikasi"
+    >
+        Verifikasi
+    </button>
+</div>
+
+    </form>
+
+    <script>
+        function togglePassword() {
+            const pwdInput = document.getElementById('password');
+            const toggleBtn = document.querySelector('.toggle-password');
+            if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                toggleBtn.textContent = '🙈'; // Change icon to indicate password is visible
+            } else {
+                pwdInput.type = 'password';
+                toggleBtn.textContent = '👁️'; // Change icon to indicate password is hidden
+            }
+        }
+    </script>
+</body>
+</html>
